@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growje</title>
+    <!-- flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- google icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <!-- bootstrap icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+        integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- jquery swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwindcss -->
+    <link rel="stylesheet" href="src/output.css">
+    <!-- custom styles -->
+    <link rel="stylesheet" href="src/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <!-- 🌟 ADVANCED NAVBAR START -->
+   <header class="sticky top-0 z-50" data-navbar>
+        <div class="bg-base-100/80 backdrop-blur border-b border-transparent shadow-none transition-all duration-300">
+            <div class="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-10" data-navbar-inner>
+
+                <!-- LEFT: Logo + Mobile Menu -->
+                <div class="navbar-start gap-2">
+                    <!-- Mobile Menu Button -->
+                    <button type="button" class="btn btn-ghost btn-circle lg:hidden" aria-label="Open main menu"
+                        data-mobile-toggle>
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                    <!-- Logo -->
+                    <a href="index.html" class="inline-flex items-center gap-2 group">
+                        <div
+                            class="w-25 h-11 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <img class="w-full h-full object-contain" src="assets/image/logo.png" alt="Growje Logo">
+                        </div>
+                    </a>
+                </div>
+
+                <!-- CENTER: Desktop Menu -->
+                <div class="navbar-center hidden lg:flex">
+                    <nav class="flex items-center gap-1 xl:gap-3 text-sm xl:text-base">
+                        <!-- Example active link: add 'nav-link-active' class -->
+                        <a href="about.html" class="nav-link px-3 py-2 rounded-full font-medium relative group">
+                            Growje
+                            <span
+                                class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                        </a>
+
+                        <!-- Services Dropdown -->
+                        <div class="dropdown">
+                            <div tabindex="0"
+                                class="nav-link px-3 py-2 rounded-full font-medium inline-flex items-center gap-1 cursor-pointer">
+                                Services
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-[1px]" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div tabindex="0"
+                                class="dropdown-content z-50 mt-3 w-[320px] xl:w-[380px] p-4 bg-base-100 rounded-2xl shadow-xl border border-base-200/80">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                                    <a href="seo.html"
+                                        class="group p-3 rounded-xl hover:bg-base-200/70 transition flex flex-col gap-1">
+                                        <span class="font-semibold flex items-center gap-2">
+                                            SEO
+                                            <!-- <span
+                                                class="inline-flex items-center justify-center text-[10px] px-2 py-[1px] rounded-full border border-base-300">
+                                                Popular
+                                            </span> -->
+                                        </span>
+                                        <span class="text-xs text-base-content/70">
+                                            Logo, stationery, complete brand language.
+                                        </span>
+                                    </a>
+                                    <a href="social_marketing.html"
+                                        class="group p-3 rounded-xl hover:bg-base-200/70 transition flex flex-col gap-1">
+                                        <span class="font-semibold">Social Media And Marketing</span>
+                                        <span class="text-xs text-base-content/70">
+                                            eCommerce, catalogue, creative product setups.
+                                        </span>
+                                    </a>
+                                    <a href="performance_marketing.html"
+                                        class="group p-3 rounded-xl hover:bg-base-200/70 transition flex flex-col gap-1">
+                                        <span class="font-semibold">performance Marketing</span>
+                                        <span class="text-xs text-base-content/70">
+                                            Corporate events, launches, conferences.
+                                        </span>
+                                    </a>
+                                    <a href="web_development.html"
+                                        class="group p-3 rounded-xl hover:bg-base-200/70 transition flex flex-col gap-1">
+                                        <span class="font-semibold">Web Development</span>
+                                        <span class="text-xs text-base-content/70">
+                                            Reels, shorts, creatives, content calendar.
+                                        </span>
+                                    </a>
+                                    <a href="video_editing.html"
+                                        class="group p-3 rounded-xl hover:bg-base-200/70 transition flex flex-col gap-1">
+                                        <span class="font-semibold flex items-center gap-2">
+                                            Video Editing
+                                            <!-- <span
+                                                class="inline-flex items-center justify-center text-[10px] px-2 py-[1px] rounded-full border border-base-300">
+                                                Popular
+                                            </span> -->
+                                        </span>
+                                        <span class="text-xs text-base-content/70">
+                                            Logo, stationery, complete brand language.
+                                        </span>
+                                    </a>
+                                    <a href="graphic.html"
+                                        class="group p-3 rounded-xl hover:bg-base-200/70 transition flex flex-col gap-1">
+                                        <span class="font-semibold">Graphic Designing</span>
+                                        <span class="text-xs text-base-content/70">
+                                            eCommerce, catalogue, creative product setups.
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="event_shoot.html" class="nav-link px-3 py-2 rounded-full font-medium relative group">
+                            Event Shoot
+                            <span
+                                class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                        </a>
+
+                        <a href="portfolio.html" class="nav-link px-3 py-2 rounded-full font-medium relative group">
+                            Portfolio
+                            <span
+                                class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                        </a>
+                        <a href="blog.html" class="nav-link px-3 py-2 rounded-full font-medium relative group">
+                            Blog
+                            <span
+                                class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                        </a>
+
+                        <a href="corporate_gift.html"
+                            class="nav-link px-3 py-2 rounded-full font-medium relative group">
+                            Corporate Gift
+                            <span
+                                class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                        </a>
+                        <a href="printing.html"
+                            class="nav-link px-3 py-2 rounded-full font-medium relative group">
+                            Printing
+                            <span
+                                class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- RIGHT: Social + CTA -->
+                <div class="navbar-end flex items-center gap-3">
+
+                    <!-- CTA Button -->
+                    <a href="contact.html" class="btn btn-sm md:btn-md rounded-full bg-black text-white border-none
+                    hover:bg-[#08689a] px-4 md:px-6 shadow-md shadow-black/10">
+                        Let’s Talk
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📱 MOBILE FULL-SCREEN MENU -->
+        <div class="lg:hidden">
+            <div data-mobile-menu class="fixed inset-0 bg-base-100/95 backdrop-blur-md translate-y-[-100%]
+            opacity-0 pointer-events-none transition-all duration-300 z-40">
+                <div class="max-w-7xl mx-auto h-full flex flex-col px-4 pt-4 pb-6">
+                    <!-- Top row: logo + close -->
+                    <div class="flex items-center justify-between mb-4">
+                        <a href="index.html" class="inline-flex items-center gap-2">
+                            <div
+                                class="w-9 h-9 rounded-2xl border border-base-300 bg-base-100 overflow-hidden flex items-center justify-center">
+                                <img src="assets/image/logo.png" alt="Growje Logo" class="w-full h-full object-contain">
+                            </div>
+                        </a>
+                        <button type="button" class="btn btn-ghost btn-circle" data-mobile-toggle>
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="flex-1 overflow-y-auto">
+                        <nav class="flex flex-col gap-2 text-base font-medium">
+                            <a href="about.html" class="mobile-link">About us</a>
+
+                            <details class="group bg-base-200/70 rounded-2xl px-4 py-3">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span>Services</span>
+                                    <svg class="w-4 h-4 transition-transform group-open:rotate-180"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                                    </svg>
+                                </summary>
+                                <div class="mt-3 flex flex-col gap-2 text-sm text-base-content/80">
+                                    <a href="seo.html" class="mobile-sub-link">SEO</a>
+                                    <a href="social_marketing.html" class="mobile-sub-link">Social Media And
+                                        Marketing</a>
+                                    <a href="performance_marketing.html" class="mobile-sub-link">performance
+                                        Marketing</a>
+                                    <a href="web_development.html" class="mobile-sub-link">Web Development</a>
+                                    <a href="video_editing.html" class="mobile-sub-link">Video Editing</a>
+                                    <a href="graphic.html" class="mobile-sub-link">Graphic Designing</a>
+                                </div>
+                            </details>
+
+                            <a href="event_shoot.html" class="mobile-link">Event Shoot</a>
+                            <a href="corporate_gift.html" class="mobile-link">Corporate Gift</a>
+                            <a href="portfolio.html" class="mobile-link">Portfolio</a>
+                            <a href="blog.html" class="mobile-link">Blog</a>
+                        </nav>
+                    </div>
+
+                    <!-- Bottom area -->
+                    <div class="mt-4 border-t border-base-300 pt-4 flex items-center justify-between gap-3">
+                        <div class="flex gap-2">
+                            <a href="#" class="p-2 rounded-full border border-base-300/70 hover:border-[#08689a]
+                            hover:text-[#08689a] transition-all duration-200">
+                                <i class="bi bi-facebook text-lg"></i>
+                            </a>
+                            <a href="#" class="p-2 rounded-full border border-base-300/70 hover:border-[#08689a]
+                            hover:text-[#08689a] transition-all duration-200">
+                                <i class="bi bi-instagram text-lg"></i>
+                            </a>
+                            <a href="#" class="p-2 rounded-full border border-base-300/70 hover:border-[#08689a]
+                            hover:text-[#08689a] transition-all duration-200">
+                                <i class="bi bi-linkedin text-lg"></i>
+                            </a>
+                        </div>
+
+                        <a href="contact.html" class="btn btn-sm rounded-full bg-black text-white border-none
+                        hover:bg-[#08689a] px-4">
+                            Let’s Talk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 🌟 ADVANCED NAVBAR END -->
+
+    <!-- Navbar End -->
+
+    <!-- main start -->
+
+    <main class="top-main min-h-screen bg-[#f5f5f5] overflow-hidden flex flex-col">
+
+        <section>
+            <header id="top">
+                <nav class="flex justify-between my-4 mx-8 uppercase font-bold">
+                    <h1 class="text-2xl">Portfolio</h1>
+                    <a id="plus" class="cursor-pointer">
+                        <h1 class="text-2xl hidden md:block">Information</h1>
+                    </a>
+                    </a>
+                </nav>
+                <div id="dropdown"
+                    class="hidden w-screen mt-20 flex-col md:flex-row justify-start md:justify-around items-center md:items-start text-center">
+                    <div class="flex flex-col md:w-1/3">
+                        <h2 class="my-4 text-2xl uppercase font-bold">About</h2>
+                        <p class="text-base mx-4 md:mx-0 pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Corporis ipsam ullam laudantium quia quibusdam, eligendi aliquam atque provident quasi
+                            rerum, omnis sint tempore perspiciatis cum!</p>
+                        <p>1-800-555-1234</p>
+                        <a href="#">melissa@photography.com</a>
+                    </div>
+                    <div class="flex flex-col md:w-1/3 pt-4 md:pt-0">
+                        <ul>
+                            <h2 class="my-4 text-2xl uppercase font-bold">Equipment</h2>
+                            <li>Nikon</li>
+                            <li>Canon</li>
+                            <li>GoPro</li>
+                            <li>Olympus</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col pt-4 md:pt-0">
+                        <h2 class="my-4 text-xl uppercase font-bold">Social</h2>
+                        <div class="flex">
+                            <a href="#"><i class="pr-4 text-3xl fab fa-instagram"></i></a>
+                            <a href="#"><i class="text-3xl fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="sec-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 my-12 mx-8">
+
+                <!-- Begin Project Grid -->
+                <section style="background-image: url(https://i.imgur.com/NOUGyc2.jpg)"
+                    class="section-port col-span-1 md:col-span-2 row-span-1 md:row-span-3 gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Northern Lights</h1>
+                        <h3 class="text-base">October 2020</h3>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/go84R4h.jpg)"
+                    class="section-port row-span-1 md:row-span-2 gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Bakery</h1>
+                        <h3 class="text-base">May 2020</h3>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/pjDQJcs.jpg)"
+                    class="section-port row-span-1 md:row-span-2 gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Africa</h1>
+                        <h2 class="text-base">June 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/0CFiVId.jpg)"
+                    class="section-port col-span-1 md:col-span-2 gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Chicago</h1>
+                        <h2 class="text-base font-semibold">May 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/Ip7cQGo.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-top">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Anchorage</h1>
+                        <h2 class="text-base">August 2019</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/tf2npG4.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Alaska</h1>
+                        <h2 class="text-base">August 2019</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/3SmMHed.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Pacific Ocean</h1>
+                        <h2 class="text-base">March 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/tnkVjaH.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Florida</h1>
+                        <h2 class="text-base font-semibold">December 2019</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+
+                <section style="background-image: url(https://i.imgur.com/ivIXRAr.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Vancouver</h1>
+                        <h2 class="text-base">September 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/hpnsdty.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Japan</h1>
+                        <h2 class="text-base">July 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/snIN0FA.jpg)"
+                    class="section-port col-span-1 row-span-1 md:col-span-2 md:row-span-2 gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Denmark</h1>
+                        <h2 class="text-base font-semibold">April 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/lKnOCsT.jpg)"
+                    class="section-port col-span-1 md:col-span-2 gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Hawaii</h1>
+                        <h2 class="text-base">January 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/X6eHpci.jpg)"
+                    class="section-port col-span-1 md:col-span-2 row-span-1 md:row-span-2 gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Arizona</h1>
+                        <h2 class="text-base">November 2019</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/pKxwCpK.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Nevada</h1>
+                        <h2 class="text-base">October 2019</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/UfVTNMg.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Russia</h1>
+                        <h2 class="text-base">August 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/4ENNSFV.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold ">London</h1>
+                        <h2 class="text-base">April 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+                <section style="background-image: url(https://i.imgur.com/MpiFRSm.jpg)"
+                    class="section-port gap-4 relative bg-cover bg-center">
+                    <div class="absolute bottom-8 left-8 text-gray-100 uppercase">
+                        <h1 class="text-2xl md:text-4xl font-bold">Tennessee</h1>
+                        <h2 class="text-base">March 2020</h2>
+                    </div>
+                    <div class="img-overlay absolute inset-0 h-full w-full opacity-0">
+                        <a href="#"
+                            class="absolute inset-0 text-center text-5xl text-gray-100 transform translate-y-1/2">
+                            <i class="fas fa-images"></i>
+                            <h2 class="text-2xl">View Project</h2>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- End Project Grid -->
+            </main>
+        </section>
+
+        <section class="py-32 bg-black text-white">
+            <div class="max-w-6xl mx-auto px-6">
+
+                <h2 class="text-4xl font-semibold">
+                    Let’s Build Something Meaningful
+                </h2>
+
+                <p class="mt-6 text-lg text-gray-400 max-w-xl">
+                    If you’re looking for a serious digital partner, Growje is ready
+                    to collaborate.
+                </p>
+
+                <a href="contact.html"
+                    class="inline-block mt-10 px-10 py-4 rounded-full bg-white text-black font-medium hover:bg-[#08689a] hover:text-white transition">
+                    Start a Conversation
+                </a>
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- main end -->
+
+    <!-- ====== Footer Section Start -->
+
+
+    <footer class="bg-black text-white">
+        <!-- TOP AREA -->
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+            <div class="grid grid-cols-1 gap-10 py-10 sm:grid-cols-2 md:grid-cols-4 lg:py-12">
+
+                <!-- Logo + Contact -->
+                <div class="space-y-4 max-w-sm">
+                    <a href="#top" class="inline-flex items-center gap-3">
+                        <div
+                            class="w-35 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
+                            <img class="w-full h-full object-contain" src="assets/image/logo.png" alt="Growje Logo">
+                        </div>
+                    </a>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Creative studio focused on brand, design and digital experiences
+                        with real business impact.
+                    </p>
+
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p class="flex gap-2">
+                            <span class="font-semibold min-w-[70px]">Location:</span>
+                            <span>
+                                WZ-806, near Palam Metro Road, Block J, Palam, New Delhi,
+                                Delhi, 110045
+                            </span>
+                        </p>
+                        <p class="flex gap-2">
+                            <span class="font-semibold min-w-[70px]">Contact:</span>
+                            <a href="tel:+919625870021" class="hover:text-[#08a0ff] transition-colors duration-200">
+                                +91-96258 70021
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="w-full sm:text-left">
+                    <h2 class="mb-4 inline-block border-b-2 border-[#08689a]/80 pb-1 text-lg font-semibold uppercase">
+                        Quick Links
+                    </h2>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>
+                            <a href="about.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#careers"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="event_shoot.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Event Shoot
+                            </a>
+                        </li>
+                        <li>
+                            <a href="corporate_gift.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Corporate Gift
+                            </a>
+                        </li>
+                        <li>
+                            <a href="corporate_gift.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="corporate_gift.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="w-full sm:text-left">
+                    <h2 class="mb-4 inline-block border-b-2 border-[#08689a]/80 pb-1 text-lg font-semibold uppercase">
+                        Services
+                    </h2>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Website Development
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Graphic Design
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Video Editng
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Social Media Marketing
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                SEO Optimization
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Printing Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Corporate Gifts
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
+                                Movie And Song Promotion
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Legal + CTA -->
+                <div class="w-full sm:text-left space-y-4">
+                    <h2 class="mb-2 inline-block border-b-2 border-[#08689a]/80 pb-1 text-lg font-semibold uppercase">
+                        Legal
+                    </h2>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>
+                            <a href="#" class="hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                Licensing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#08a0ff] hover:underline transition-colors duration-200">
+                                Terms &amp; Conditions
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <p class="text-sm text-gray-400 mb-2">
+                            Have a project in mind?
+                        </p>
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 rounded-full border border-[#08689a]/80 px-4 py-2 text-sm font-medium hover:bg-[#08689a] hover:text-white transition-colors duration-200">
+                            Let’s Talk
+                            <span class="inline-block translate-y-[1px]">
+                                →
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="border-t border-white/10">
+            <div
+                class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <span class="text-xs sm:text-sm text-gray-400">
+                    © 2023
+                    <a href="https://growje.com/" class="hover:text-[#08a0ff] hover:underline">
+                        Growje
+                    </a>. All Rights Reserved.
+                </span>
+
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <a href="#" class="text-gray-400 hover:text-[#08a0ff] transition-colors duration-200">
+                        <i class="bi bi-facebook text-xl"></i>
+                        <span class="sr-only">Facebook page</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-[#E1306C] transition-colors duration-200">
+                        <i class="bi bi-instagram text-xl"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-red-500 transition-colors duration-200">
+                        <i class="bi bi-youtube text-xl"></i>
+                        <span class="sr-only">YouTube</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-[#ffe600] transition-colors duration-200">
+                        <i class="bi bi-google text-xl"></i>
+                        <span class="sr-only">Google</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-green-500 transition-colors duration-200">
+                        <i class="bi bi-whatsapp text-xl"></i>
+                        <span class="sr-only">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- ====== Footer Section End -->
+    <!-- CDN jquery swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- custom jquery -->
+    <script src="src/jquery.js"></script>
+    <!-- custom scripts -->
+    <script src="src/script.js"></script>
+    <!-- flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <!-- daisyUI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- navbar -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.querySelector("[data-navbar]");
+            const mobileMenu = document.querySelector("[data-mobile-menu]");
+            const toggles = document.querySelectorAll("[data-mobile-toggle]");
+
+            // Scroll effect
+            function onScroll() {
+                if (window.scrollY > 10) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            }
+            onScroll();
+            window.addEventListener("scroll", onScroll);
+
+            // Mobile menu toggle
+            function toggleMenu() {
+                const isOpen = mobileMenu.classList.contains("!translate-y-0");
+                if (isOpen) {
+                    mobileMenu.classList.remove("!translate-y-0", "!opacity-100");
+                    mobileMenu.classList.add("pointer-events-none");
+                    document.body.classList.remove("overflow-hidden");
+                } else {
+                    mobileMenu.classList.add("!translate-y-0", "!opacity-100");
+                    mobileMenu.classList.remove("pointer-events-none");
+                    document.body.classList.add("overflow-hidden");
+                }
+            }
+
+            toggles.forEach(btn => {
+                btn.addEventListener("click", toggleMenu);
+            });
+
+            // Mobile links click -> menu close
+            mobileMenu.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    if (mobileMenu.classList.contains("!translate-y-0")) {
+                        toggleMenu();
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -186,6 +186,14 @@ function removeActiveClasses() {
         panel.classList.remove('active');
     });
 }
-
-
 // carousel end
+
+// portfolio
+
+let plus = document.getElementById('plus');
+
+let dropdown = document.getElementById('dropdown');
+
+plus.addEventListener('click', function(){
+  dropdown.classList.toggle('show');
+});
