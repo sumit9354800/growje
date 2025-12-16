@@ -312,27 +312,58 @@
                         </div>
 
                         <div>
-                            <label class="block text-sm text-gray-600 mb-1">Email Address</label>
-                            <input type="email"
-                                class="w-full border placeholder:text-gray-500 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#08689a]"
-                                placeholder="you@example.com">
+                            <label class="block text-sm text-gray-600 mb-1">Phone Number</label>
+
+                            <div class="flex gap-2">
+
+                                <!-- COUNTRY SELECT -->
+                                <select id="countryCode"
+                                    class="border border-gray-300 rounded-lg px-7 py-3 focus:outline-none focus:border-[#08689a] bg-white">
+                                    <option value="91" data-length="10">🇮🇳 +91</option>
+                                    <option value="1" data-length="10">🇺🇸 +1</option>
+                                    <option value="44" data-length="10">🇬🇧 +44</option>
+                                    <option value="61" data-length="9">🇦🇺 +61</option>
+                                    <option value="971" data-length="9">🇦🇪 +971</option>
+                                </select>
+
+                                <!-- PHONE INPUT -->
+                                <input type="tel" id="phoneInput"
+                                    class="w-full border placeholder:text-gray-500 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#08689a]"
+                                    placeholder="Enter phone number" maxlength="10">
+                            </div>
                         </div>
 
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Phone Number</label>
-                            <input type="text"
-                                class="w-full border placeholder:text-gray-500 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#08689a]"
-                                placeholder="+91 XXXXX XXXXX">
-                        </div>
+                        <script>
+                            const countrySelect = document.getElementById("countryCode");
+                            const phoneInput = document.getElementById("phoneInput");
+
+                            function updatePhoneLimit() {
+                                const selectedOption = countrySelect.options[countrySelect.selectedIndex];
+                                const maxLength = selectedOption.getAttribute("data-length");
+
+                                phoneInput.value = ""; // reset on country change
+                                phoneInput.maxLength = maxLength;
+                                phoneInput.placeholder = `Enter ${maxLength}-digit number`;
+                            }
+
+                            // Only allow numbers
+                            phoneInput.addEventListener("input", () => {
+                                phoneInput.value = phoneInput.value.replace(/\D/g, "");
+                            });
+
+                            // Update limit on country change
+                            countrySelect.addEventListener("change", updatePhoneLimit);
+
+                            // Init on load
+                            updatePhoneLimit();
+                        </script>
 
                         <!-- SERVICE SELECT -->
                         <div>
                             <label class="block text-sm text-gray-600 mb-1">Service Required</label>
                             <select
                                 class="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#08689a] bg-white">
-                                <option value="" disabled selected>
-                                    Select a service
-                                </option>
+                                <option disabled selected>Select a service</option>
                                 <option>Web Development</option>
                                 <option>Graphic Designing</option>
                                 <option>Video Editing</option>
@@ -343,6 +374,21 @@
                                 <option>Corporate Gifting</option>
                                 <option>Printing Services</option>
                                 <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- BUDGET RANGE -->
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Estimated Budget</label>
+                            <select
+                                class="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#08689a] bg-white">
+                                <option disabled selected>Select budget range</option>
+                                <option>₹0 – ₹10,000</option>
+                                <option>₹10,000 – ₹25,000</option>
+                                <option>₹25,000 – ₹50,000</option>
+                                <option>₹50,000 – ₹1,00,000</option>
+                                <option>₹1,00,000 – ₹2,50,000</option>
+                                <option>₹2,50,000+</option>
                             </select>
                         </div>
 
@@ -359,6 +405,7 @@
                         </button>
 
                     </form>
+
 
                 </div>
 
