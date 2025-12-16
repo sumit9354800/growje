@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Growje</title>
+    <link rel="shortcut icon" href="assets/image/growje-circle-logo.png" type="image/x-icon">
     <!-- flowbite -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
     <!-- google icons -->
@@ -31,9 +32,99 @@
 
 <body>
 
+
+    <!-- ================= CONTACT MODAL START ================= -->
+    <div id="contactModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60">
+
+        <!-- Modal Box -->
+        <div class="bg-white w-[95%] sm:w-[70%] lg:w-[40%] rounded-2xl p-8 relative animate-fadeIn">
+
+            <!-- Close Button -->
+            <button onclick="closeContactModal()"
+                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">
+                &times;
+            </button>
+
+            <h2 class="text-3xl font-semibold mb-8">
+                Send Us a Message
+            </h2>
+
+            <!-- YOUR FORM (same as before) -->
+            <form class="space-y-6">
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Full Name</label>
+                    <input type="text"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none"
+                        placeholder="Your Name">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Phone Number</label>
+                    <input type="text"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none"
+                        placeholder="+91 XXXXX XXXXX">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Service Required</label>
+                    <select
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none bg-white">
+                        <option disabled selected>Select a service</option>
+                        <option>Web Development</option>
+                        <option>Graphic Designing</option>
+                        <option>Video Editing</option>
+                        <option>SEO Services</option>
+                        <option>Social Media Marketing</option>
+                        <option>Performance Marketing</option>
+                        <option>Event Shoot</option>
+                        <option>Corporate Gifting</option>
+                        <option>Printing Services</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Your Message</label>
+                    <textarea rows="4"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none"
+                        placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <div class="flex gap-4">
+                    <button type="submit"
+                        class="px-8 py-3 rounded-full bg-black text-white hover:bg-[#08689a] transition">
+                        Send Message
+                    </button>
+
+                    <!-- Cancel Button -->
+                    <button type="button" onclick="closeContactModal()"
+                        class="px-8 py-3 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- ================= CONTACT MODAL END ================= -->
+
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("contactModal").classList.remove("hidden");
+                document.getElementById("contactModal").classList.add("flex");
+            }, 2500);
+        });
+
+        function closeContactModal() {
+            document.getElementById("contactModal").classList.add("hidden");
+        }
+    </script>
+
+
     <!-- Header Start -->
     <!-- 🌟 ADVANCED NAVBAR START -->
-     <header class="sticky top-0 z-50" data-navbar>
+    <header class="sticky top-0 z-50" data-navbar>
         <div class="bg-base-100/80 backdrop-blur border-b border-transparent shadow-none transition-all duration-300">
             <div class="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-10" data-navbar-inner>
 
@@ -164,8 +255,7 @@
                             <span
                                 class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
                         </a>
-                        <a href="printing.html"
-                            class="nav-link px-3 py-2 rounded-full font-medium relative group">
+                        <a href="printing.html" class="nav-link px-3 py-2 rounded-full font-medium relative group">
                             Printing
                             <span
                                 class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
@@ -186,7 +276,7 @@
         </div>
 
         <!-- 📱 MOBILE FULL-SCREEN MENU -->
-          <div class="lg:hidden">
+        <div class="lg:hidden">
             <div data-mobile-menu class="fixed bg-white inset-0 bg-base-100/95 backdrop-blur-xl translate-y-[-100%]
             opacity-0 pointer-events-none transition-all duration-300 z-40">
                 <div class="max-w-7xl mx-auto h-full flex flex-col px-4 pt-4 pb-6">
@@ -273,7 +363,7 @@
 
     <main class="min-h-screen bg-[#f5f5f5] overflow-hidden flex flex-col">
 
-      
+
     </main>
 
     <!-- main end -->
@@ -424,7 +514,7 @@
                             <a href="performance_marketing.html"
                                 class="inline-flex items-center gap-2 hover:text-[#08a0ff] hover:underline transition-colors duration-200">
                                 <span class="w-1.5 h-1.5 rounded-full bg-[#08a0ff]"></span>
-                              performance Marketing
+                                performance Marketing
                             </a>
                         </li>
                         <!-- <li>
@@ -508,8 +598,8 @@
                         <i class="bi bi-google text-xl"></i>
                         <span class="sr-only">Google</span>
                     </a>
-                    <a href="https://wa.me/919625870021?text=Hello!%20I%20want%20to%20connect%20with%20you" target="_blank"
-                        class="text-gray-400 hover:text-green-500 transition-colors duration-200">
+                    <a href="https://wa.me/919625870021?text=Hello!%20I%20want%20to%20connect%20with%20you"
+                        target="_blank" class="text-gray-400 hover:text-green-500 transition-colors duration-200">
                         <i class="bi bi-whatsapp text-xl"></i>
                         <span class="sr-only">WhatsApp</span>
                     </a>

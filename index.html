@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Growje</title>
+    <link rel="shortcut icon" href="assets/image/growje-circle-logo.png" type="image/x-icon">
     <!-- flowbite -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
     <!-- google icons -->
@@ -30,6 +31,96 @@
 </head>
 
 <body>
+
+    <!-- ================= CONTACT MODAL START ================= -->
+    <div id="contactModal" class="fixed inset-0 z-60 hidden items-center justify-center bg-black/60">
+
+        <!-- Modal Box -->
+        <div class="bg-white w-[95%] sm:w-[70%] lg:w-[40%] rounded-2xl p-8 relative animate-fadeIn">
+
+            <!-- Close Button -->
+            <button onclick="closeContactModal()"
+                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">
+                &times;
+            </button>
+
+            <h2 class="text-3xl font-semibold mb-8">
+                Send Us a Message
+            </h2>
+
+            <!-- YOUR FORM (same as before) -->
+            <form class="space-y-6">
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Full Name</label>
+                    <input type="text"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none"
+                        placeholder="Your Name">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Phone Number</label>
+                    <input type="text"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none"
+                        placeholder="+91 XXXXX XXXXX">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Service Required</label>
+                    <select
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none bg-white">
+                        <option disabled selected>Select a service</option>
+                        <option>Web Development</option>
+                        <option>Graphic Designing</option>
+                        <option>Video Editing</option>
+                        <option>SEO Services</option>
+                        <option>Social Media Marketing</option>
+                        <option>Performance Marketing</option>
+                        <option>Event Shoot</option>
+                        <option>Corporate Gifting</option>
+                        <option>Printing Services</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Your Message</label>
+                    <textarea rows="4"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none"
+                        placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <div class="flex gap-4">
+                    <button type="submit"
+                        class="px-8 py-3 rounded-full bg-black text-white hover:bg-[#08689a] transition">
+                        Send Message
+                    </button>
+
+                    <!-- Cancel Button -->
+                    <button type="button" onclick="closeContactModal()"
+                        class="px-8 py-3 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- ================= CONTACT MODAL END ================= -->
+
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("contactModal").classList.remove("hidden");
+                document.getElementById("contactModal").classList.add("flex");
+            }, 2500);
+        });
+
+        function closeContactModal() {
+            document.getElementById("contactModal").classList.add("hidden");
+        }
+    </script>
+
+
 
     <!-- Header Start -->
     <!-- 🌟 ADVANCED NAVBAR START -->
@@ -304,33 +395,7 @@
                 solutions.
             </p>
         </section>
-        <!-- start social media  -->
-        <div class="flex justify-center items-center flex-col bg-transparent">
-            <div
-                class="w-[90%] flex flex-col sm:flex-row items-center justify-between gap-y-8 sm:gap-y-0 sm:gap-x-10 transition-all duration-500">
-                <!-- Social Icons -->
-                <div class="flex justify-center sm:justify-start gap-6">
-                    <img src="https://cdn.prod.website-files.com/68da09a4259b4ed4655511f6/68da10fd992be47282f1d471_icons8-facebook-50.png"
-                        class="invert brightness-100 w-[40px] sm:w-[45px] lg:w-[50px] h-[40px] hover:scale-110 hover:rotate-3 transition-all duration-300"
-                        alt="Facebook" />
-                    <img src="https://cdn.prod.website-files.com/68da09a4259b4ed4655511f6/68da10fd992be47282f1d46d_icons8-linkedin-60.png"
-                        class="invert brightness-100 w-[40px] sm:w-[45px] lg:w-[50px] h-[40px] hover:scale-110 hover:rotate-3 transition-all duration-300"
-                        alt="LinkedIn" />
-                </div>
 
-                <!-- CTA Button -->
-                <div class="flex justify-center sm:justify-end">
-                    <a href="contact-us.html"
-                        class="relative bg-[#08689a] text-white text-lg sm:text-xl px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                        <span class="relative z-10">Get Started</span>
-                        <!-- Animated background glow -->
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-[#0a80c8] to-[#13b0ff] opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl">
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
         <!-- carousel end -->
 
         <!-- end social media  -->
@@ -476,7 +541,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="graphic.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -509,7 +574,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="video_editing.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -542,7 +607,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="web_development.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -575,7 +640,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="social_marketing.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -607,7 +672,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="seo.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -642,7 +707,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="performance_marketing.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -675,7 +740,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="event_shoot.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -692,14 +757,14 @@
                             <!-- Icon Box -->
                             <div
                                 class="w-20 h-20 flex items-center justify-center rounded-full bg-gray-100 transition-all duration-300 group-hover:bg-black">
-                                <img src="https://cdn-icons-png.flaticon.com/128/2779/2779775.png"
+                                <img src="https://cdn-icons-png.flaticon.com/128/2315/2315156.png"
                                     class="w-12  transition duration-300" alt="Graphic Design Icon">
                             </div>
 
                             <!-- Title -->
                             <h3
                                 class="text-lg sm:text-xl font-semibold transition-colors duration-300 group-hover:text-black">
-                                Graphic Design
+                                Corporate Gift
                             </h3>
 
                             <!-- Description -->
@@ -708,7 +773,7 @@
                             </p>
 
                             <!-- Button -->
-                            <a href="#"
+                            <a href="corporate_gift.html"
                                 class="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-black rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black hover:text-white">
                                 Explore More
                                 <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -741,12 +806,7 @@
                     specific needs. Are you a small business owner trying to find ways to compete with big companies?
                     As a digital marketing agency for small businesses, we develop cost-effective, high-impact
                     strategies
-                    to help you. Or maybe you represent a large company looking to increase its digital presence?
-                    Our experienced strategists build strong campaigns that create real results for your company while
-                    keeping you ahead of the curve. Why use cookie-cutter solutions? Let RDG be your marketing company
-                    and benefit from solutions tailored towards your small or big business. Ready to kickstart the
-                    journey
-                    of taking your digital presence to the next level? Let us start today!
+                    to help you.
                 </p>
             </div>
         </section>
