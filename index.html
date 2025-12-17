@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="DtQVopC1EFJlab6ej6f9CRt2QxtqQ6GG3xr4SgKHLJc" />
     <title>Growje</title>
     <link rel="shortcut icon" href="assets/image/growje-circle-logo.png" type="image/x-icon">
     <!-- flowbite -->
@@ -44,12 +45,12 @@
                 &times;
             </button>
 
-            <h2 class="text-3xl font-semibold mb-8">
+            <h2 class="text-3xl font-semibold mb-4">
                 Send Us a Message
             </h2>
 
             <!-- YOUR FORM (same as before) -->
-            <form class="space-y-6">
+            <form class="space-y-3">
 
                 <div>
                     <label class="block text-sm text-gray-600 mb-1">Full Name</label>
@@ -138,38 +139,63 @@
                     updateLimit();
                 </script>
 
-
+                <!-- SERVICE -->
                 <div>
                     <label class="block text-sm text-gray-600 mb-1">Service Required</label>
-                    <select
+                    <select id="serviceSelect" name="service"
                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-[#08689a] outline-none bg-white">
-                        <option disabled selected>Select a service</option>
-                        <option>Web Development</option>
-                        <option>Graphic Designing</option>
-                        <option>Video Editing</option>
-                        <option>SEO Services</option>
-                        <option>Social Media Marketing</option>
-                        <option>Performance Marketing</option>
-                        <option>Event Shoot</option>
-                        <option>Corporate Gifting</option>
-                        <option>Printing Services</option>
+                        <option disabled selected value="">Select a service</option>
+                        <option value="web">Web Development</option>
+                        <option value="graphic">Graphic Designing</option>
+                        <option value="video">Video Editing</option>
+                        <option value="seo">SEO Services</option>
+                        <option value="smm">Social Media Marketing</option>
+                        <option value="performance">Performance Marketing</option>
+                        <option value="event">Event Shoot</option>
+                        <option value="gift">Corporate Gifting</option>
+                        <option value="print">Printing Services</option>
                     </select>
                 </div>
 
-                <!-- BUDGET RANGE -->
+                <!-- BUDGET -->
                 <div>
                     <label class="block text-sm text-gray-600 mb-1">Estimated Budget</label>
-                    <select
+                    <select id="budgetSelect" name="budget"
                         class="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#08689a] bg-white">
-                        <option disabled selected>Select budget range</option>
-                        <option>₹0 – ₹10,000</option>
-                        <option>₹10,000 – ₹25,000</option>
-                        <option>₹25,000 – ₹50,000</option>
-                        <option>₹50,000 – ₹1,00,000</option>
-                        <option>₹1,00,000 – ₹2,50,000</option>
-                        <option>₹2,50,000+</option>
+                        <option disabled selected value="">Select budget range</option>
+                        <option value="0-10000">₹0 – ₹10,000</option>
+                        <option value="10000-25000">₹10,000 – ₹25,000</option>
+                        <option value="25000-50000">₹25,000 – ₹50,000</option>
+                        <option value="50000-100000">₹50,000 – ₹1,00,000</option>
+                        <option value="100000-250000">₹1,00,000 – ₹2,50,000</option>
+                        <option value="250000+">₹2,50,000+</option>
                     </select>
                 </div>
+                <script>
+                    const serviceSelect = document.getElementById("serviceSelect");
+                    const budgetSelect = document.getElementById("budgetSelect");
+
+                    // Service → Budget mapping
+                    const serviceBudgetMap = {
+                        web: "50000-100000",
+                        graphic: "10000-25000",
+                        video: "0-10000",
+                        seo: "25000-50000",
+                        smm: "25000-50000",
+                        performance: "50000-100000",
+                        event: "50000-100000",
+                        gift: "25000-50000",
+                        print: "10000-25000"
+                    };
+
+                    serviceSelect.addEventListener("change", () => {
+                        const selectedService = serviceSelect.value;
+
+                        if (serviceBudgetMap[selectedService]) {
+                            budgetSelect.value = serviceBudgetMap[selectedService];
+                        }
+                    });
+                </script>
 
                 <div>
                     <label class="block text-sm text-gray-600 mb-1">Your Message</label>
@@ -244,7 +270,7 @@
                     <nav class="flex items-center gap-1 xl:gap-3 text-sm xl:text-base">
                         <!-- Example active link: add 'nav-link-active' class -->
                         <a href="about.html" class="nav-link px-3 py-2 rounded-full font-medium relative group">
-                            Growje
+                            About us
                             <span
                                 class="absolute left-4 right-4 -bottom-1 h-[2px] rounded-full bg-[#08689a] scale-x-0 group-hover:scale-x-100 transition-transform origin-center"></span>
                         </a>
@@ -455,8 +481,8 @@
         <!-- carousel -->
         <section class="h-full flex flex-col justify-center items-center text-center px-4 sm:px-8 lg:px-20">
             <!-- Small Title -->
-            <p class="text-xl sm:text-2xl lg:text-3xl mt-6 sm:mb-10 font-medium text-[#08689a]">
-                Branding and Marketing Agency
+            <p class="text-xl sm:text-2xl lg:text-2xl mt-6 sm:mb-10 font-medium text-[#08689a]">
+                Complete Branding & Digital Solutions
             </p>
 
             <!-- Main Animated Heading -->
@@ -478,10 +504,9 @@
                 <span
                     class="growje-letter text-[#717274] hover:translate-y-[-20px] blur-[0px] transition-all ease-in-out duration-800">E</span>
             </h1>
-            <p class="text-lg sm:text-xl lg:text-xl mt-20 sm:mb-10 font-medium text-gray-700">
-                Crafting bold digital experiences that help brands grow <br>
-                and stand out. From strategy into impactful digital <br>
-                solutions.
+            <p class="text-lg sm:text-xl w-full lg:w-[70%] lg:text-xl mt-20 sm:mb-10 font-medium text-gray-700">
+                From strategic Branding to high-ROI Performance Marketing. <br>We bridge the gap between creativity and
+                technology to scale your business.
             </p>
         </section>
 
@@ -539,17 +564,17 @@
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-[3px] bg-[#08689a] rounded-full"></div>
                         <span class="text-xs tracking-[0.2em] uppercase text-[#08689a] font-semibold">
-                            About DigiStreet Media
+                            ABOUT GROWJE BRAND SOLUTION
                         </span>
                     </div>
 
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug text-slate-900">
-                        Award-Winning Digital Marketing Agency in India
+                        Transforming Businesses into Digital Market Leaders
                     </h2>
 
                     <p class="text-sm sm:text-base text-slate-600">
-                        Some just talk. Some deliver <span class="font-semibold text-slate-900">real, measurable
-                            results.</span>
+                        <span class="font-semibold text-slate-900">Some agencies chase trends. We chase results. We
+                            deliver the complete digital ecosystem under one roof.</span>
                     </p>
                 </div>
 
@@ -560,27 +585,28 @@
                             We deliver—results that speak for themselves.
                         </p>
 
-                        <p class="text-slate-700">
-                            At DigiStreet Media, we believe in turning bold ideas into measurable impact. With a passion
-                            for performance and a deep understanding of branding, communication, and digital platforms,
-                            we’ve consistently driven success for our clients—earning industry recognition along the
-                            way.
+                        <p class="text-slate-700 text-justify">
+                            <b>We Don't Just Market; We Engineer Growth.</b> At <b>Growje Brand Solution,</b> we believe
+                            that in today's world, a brand isn't just a logo—it's an experience. We are New Delhi’s
+                            premier digital growth partner, eliminating the chaos of working with multiple freelancers
+                            by bringing <b>Strategy, Design, and Technology</b> together.
                         </p>
 
-                        <p class="text-slate-700">
-                            From being ranked among the <span class="font-medium">Top 20 Digital Marketing
-                                Agencies</span> by Silicon India
-                            to being named the <span class="font-medium">Top Healthcare Marketing Agency in 2024</span>,
-                            our journey has been
-                            defined by creativity, consistency, and conversion-led strategies.
+                        <p class="text-slate-700 text-justify">
+                            <b>Creativity Backed by Data.</b> Our expertise goes beyond standard marketing. Whether you
+                            need high-conversion <b>SEO & Performance Marketing, viral Video Editing, or a custom
+                                Website Development,</b> we ensure every pixel serves a business purpose. We combine the
+                            art of <b>Graphic Design</b> with the science of algorithms.
                         </p>
 
-                        <p class="text-slate-700">
-                            We’ve partnered with brands across <span class="font-medium">B2B, Healthcare, Education,
-                                Fashion, Food,
-                                and Automotive</span> sectors—delivering campaigns that don’t just make noise, but make
-                            a difference.
+                        <p class="text-slate-700 text-justify">
+                            We partner with ambitious brands to deliver campaigns that drive real revenue, not just
+                            vanity metrics. From crafting your visual identity to ranking you #1 on Google, we provide a
+                            seamless experience that saves you time and multiplies your ROI. <b>Your vision, our
+                                execution.</b>
+
                         </p>
+
                     </div>
                 </div>
 
@@ -881,21 +907,20 @@
         <!-- Digital Marketing start -->
         <section class="flex flex-col items-center gap-6 px-4 py-10 sm:gap-8 sm:py-14 lg:gap-10 lg:py-16">
             <div class="w-full max-w-4xl text-center">
-                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug sm:leading-tight">
-                    Small Business or Big Enterprise?
-                    We've Got Your <b class="text-[#08689a]">Digital Marketing</b> Covered
+                <h3 class="text-2xl sm:text-3xl lg:text-5xl font-semibold leading-snug sm:leading-tight">
+                    Startup or Enterprise?
+                    We've Got Your <b class="text-[#08689a]">Digital Growth</b> Covered
                 </h3>
             </div>
 
             <div class="w-full max-w-8xl">
                 <p class="text-center text-sm sm:text-base lg:text-lg">
-                    Do you find yourself seeking a digital marketing agency in India that's perfectly capable of
-                    understanding the inner structure of your business? Then you have come to the right place! At RDG,
-                    we specialize in providing tailor-made digital marketing services from India so as to satisfy your
-                    specific needs. Are you a small business owner trying to find ways to compete with big companies?
-                    As a digital marketing agency for small businesses, we develop cost-effective, high-impact
-                    strategies
-                    to help you.
+                    Do you need a digital partner who understands that a local business needs different tactics than a
+                    global brand? You have come to the right place.<br>At Growje, we don't believe in
+                    "one-size-fits-all" packages. We act as your strategic partner, tailoring our services to your
+                    budget and goals. Whether you need a cost-effective Social Media roadmap to launch your brand or a
+                    complex Web Development project for high-volume traffic, we have the expertise to deliver. Big or
+                    small, we treat every budget with the same respect: delivering maximum ROI.
                 </p>
             </div>
         </section>
@@ -935,7 +960,7 @@
                     <div class="flex flex-col gap-4 order-2 lg:order-1">
                         <div class="grid sm:grid-cols-2 gap-4 justify-between">
                             <button class="group w-full">
-                                <div class="activeBtn w-full text-lg sm:text-xl font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
+                                <div class="activeBtn w-full text-lg sm:text-lg font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
                                     id="webBtn">
                                     Web Development
                                     <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -945,42 +970,44 @@
                             <button class="group w-full">
                                 <div class="w-full text-lg sm:text-xl font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
                                     id="graphicBtn">
-                                    Graphic Designing
+                                    Branding & Design
                                     <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
                                 </div>
                             </button>
 
                             <button class="group w-full">
-                                <div class="w-full text-lg sm:text-xl font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
+                                <div class="w-full text-lg sm:text-lg font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
                                     id="videoBtn">
                                     Video Editing
                                     <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
                                 </div>
                             </button>
 
+
                             <button class="group w-full">
-                                <div class="w-full text-lg sm:text-xl font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
-                                    id="seoBtn">
-                                    SEO
+                                <div class="w-full text-lg sm:text-lg font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
+                                    id="printingBtn">
+                                    Social Media Marketing
                                     <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
                                 </div>
                             </button>
 
                             <button class="group w-full">
-                                <div class="w-full text-lg sm:text-xl font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
+                                <div class="w-full text-lg sm:text-lg font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
+                                    id="seoBtn">
+                                    SEO Optimization
+                                    <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                                </div>
+                            </button>
+
+                            <button class="group w-full">
+                                <div class="w-full text-lg sm:text-lg font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
                                     id="performanceBtn">
                                     Performance Marketing
                                     <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
                                 </div>
                             </button>
 
-                            <button class="group w-full">
-                                <div class="w-full text-lg sm:text-xl font-semibold border-2 border-gray-600 py-4 px-4 rounded-xl flex justify-between items-center hover:border-[#08689a] hover:bg-[#08689a] transition-all duration-300"
-                                    id="printingBtn">
-                                    Digital Marketing
-                                    <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                                </div>
-                            </button>
                         </div>
                     </div>
 
@@ -1109,7 +1136,7 @@
                         <h3 class="text-2xl sm:text-3xl font-semibold" id="headingDifference">
                             Custom Solutions
                         </h3>
-                        <p class="text-sm sm:text-base leading-relaxed" id="paraDifference">
+                        <p class="text-sm sm:text-base leading-relaxed text-justify" id="paraDifference">
                             As a reputable digital marketing agency operating in India, we
                             develop strategies and tactics to achieve your goals while keeping
                             business results in mind.
@@ -1122,7 +1149,6 @@
                 </div>
             </div>
         </section>
-
 
 
         <!-- How We Are Different End -->
@@ -1342,65 +1368,6 @@
 
         <!-- feedback carousel end -->
 
-        <!-- form start -->
-
-        <section class="form-section">
-            <div class="background">
-                <div class="container">
-                    <div class="screen">
-                        <div class="screen-header">
-                            <div class="screen-header-left">
-                                <div class="screen-header-button close"></div>
-                                <div class="screen-header-button maximize"></div>
-                                <div class="screen-header-button minimize"></div>
-                            </div>
-                            <div class="screen-header-right">
-                                <div class="screen-header-ellipsis"></div>
-                                <div class="screen-header-ellipsis"></div>
-                                <div class="screen-header-ellipsis"></div>
-                            </div>
-                        </div>
-                        <div class="screen-body">
-                            <div class="screen-body-item left">
-                                <div class="app-title">
-                                    <span>CONTACT</span>
-                                    <span>US</span>
-                                </div>
-                                <div class="app-contact text-[#888] flex flex-col gap-2 text-[11px] mt-[auto]">
-                                    <div><b>Location </b>:
-                                        WZ-806, near Palam Metro Road, Block J, Palam, New Delhi, Delhi, 110045
-                                    </div>
-                                    <div><b>CONTACT INFO</b> : +91-96258 70021</div>
-                                </div>
-                            </div>
-                            <form class="screen-body-item">
-                                <div class="app-form">
-                                    <div class="app-form-group">
-                                        <input class="app-form-control" placeholder="NAME" value="">
-                                    </div>
-                                    <div class="app-form-group">
-                                        <input class="app-form-control" placeholder="EMAIL">
-                                    </div>
-                                    <div class="app-form-group">
-                                        <input class="app-form-control" placeholder="CONTACT NO">
-                                    </div>
-                                    <div class="app-form-group message">
-                                        <input class="app-form-control" placeholder="MESSAGE">
-                                    </div>
-                                    <div class="app-form-group buttons">
-                                        <!-- <button class="app-form-button">CANCEL</button> -->
-                                        <button class="app-form-button">SEND</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- form end -->
-
         <!-- accordion start -->
 
         <section class="w-full flex flex-col items-center my-20 justify-center">
@@ -1593,8 +1560,7 @@
                 <!-- Logo + Contact -->
                 <div class="space-y-4 max-w-sm">
                     <a href="index.html" class="inline-flex items-center gap-3">
-                        <div
-                            class="w-35 h-12 rounded-2xl flex items-center justify-center overflow-hidden">
+                        <div class="w-35 h-12 rounded-2xl flex items-center justify-center overflow-hidden">
                             <img class="w-full h-full object-contain" src="assets/image/logo.png" alt="Growje Logo">
                         </div>
                     </a>
@@ -1821,6 +1787,11 @@
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/+919625870021" target="_blank" rel="noopener noreferrer"><img class="heart"
+            alt="contact icon" src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png"
+            style="position: fixed;z-index: 99999;bottom: 50px; left:14px; width: 60px;">
+    </a>
 
     <!-- ====== Footer Section End -->
     <!-- CDN jquery swiper -->

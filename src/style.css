@@ -444,7 +444,7 @@
        button,
        input {
            /* font-family: 'Montserrat', sans-serif; */
-           font-weight: 700;
+           font-weight: 500;
            letter-spacing: 1.4px;
        }
 
@@ -690,7 +690,7 @@
        h5,
        h6 {
            /* font-family: 'Bebas Neue', cursive; */
-           letter-spacing: 2px;
+           /* letter-spacing: 2px; */
        }
 
        .show {
